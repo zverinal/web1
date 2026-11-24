@@ -1,0 +1,632 @@
+
+/* COSMOS - HLAVNI STYL WEBU */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #080e1b;
+    --surface: #101a2b;
+    --surface-light: #17243a;
+    --text: #f0f5ff;
+    --muted: #a2b0c6;
+    --accent: #69c9ff;
+    --border: #26344a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+
+    /* Odsazení kvůli pevné navigaci */
+    padding-top: 76px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+p {
+    color: var(--muted);
+}
+
+/* HLAVICKA A NAVIGACE */
+
+.header {
+    min-height: 76px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: rgba(8, 14, 27, 0.98);
+    border-bottom: 10px solid var(--border);
+
+    /* NOVÉ VLASTNOSTI */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.logo {
+    color: var(--text);
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    white-space: nowrap;
+}
+
+.logo:first-letter {
+    color: var(--accent);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 24px;
+    transition: color 0.2s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--accent);
+}
+
+/* UVODNI HERO BLOK */
+
+.hero {
+    min-height: 530px;
+    display: flex;
+    align-items: center;
+    padding: 90px 9%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 14, 27, 0.98) 0%,
+            rgba(8, 14, 27, 0.83) 48%,
+            rgba(8, 14, 27, 0.18) 100%
+        ),
+        url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-text {
+    max-width: 500px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* TLACITKO */
+
+.button {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #071321;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.button:hover {
+    background: #a0e0ff;
+    transform: translateY(-2px);
+}
+
+/* SEKCE A NADPISY */
+
+.section {
+    padding: 70px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.section-heading h2,
+.fact-banner h2 {
+    font-size: clamp(27px, 4vw, 40px);
+    margin-bottom: 10px;
+}
+
+.section-heading > p:last-child {
+    margin-top: 10px;
+}
+
+/* KARTY S OBSAHEM */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    overflow: hidden;
+    background: var(--surface);
+    border: 10px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card img {
+    height: 210px;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-number {
+    color: var(--accent);
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+.card-content p {
+    font-size: 20px;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* SPODNI INFORMACNI BLOK */
+
+.fact-banner {
+    margin: 0 7% 30px;
+    padding: 30px;
+    border: 10px solid var(--border);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #122641, #101a2b);
+    text-align: center;
+}
+
+.fact-banner h2 {
+    max-width: 800px;
+    margin: 0 auto 5px;
+}
+
+.fact-banner p:last-child {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* PODSTRANKY */
+
+.page-hero {
+    padding: 60px 7% 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #12243e, #080e1b);
+    border-bottom: 10px solid var(--border);
+}
+
+.page-hero h1 {
+    font-size: clamp(34px, 5vw, 60px);
+    margin-bottom: 10px;
+}
+
+.page-hero > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* PLANETY */
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.planet-card {
+    padding: 25px 20px;
+    background: var(--surface);
+    border: 10px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.planet-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.planet {
+    width: 125px;
+    height: 125px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    box-shadow: inset -18px -12px 25px rgba(0, 0, 0, 0.45),
+                0 0 25px rgba(100, 160, 255, 0.08);
+}
+
+/* Barevne modely planet vytvorene pouze CSS */
+
+.mercury {
+    background: radial-gradient(circle at 30% 25%, #c8c2b9, #77716a 55%, #35333a);
+}
+
+.venus {
+    background: radial-gradient(circle at 30% 25%, #ffe0a0, #d99552 55%, #78472e);
+}
+
+.earth {
+    background:
+        radial-gradient(ellipse at 30% 40%, #65a95e 0 12%, transparent 13%),
+	radial-gradient(ellipse at 88% 10%, #65a95e 0 17%, transparent 13%),
+	radial-gradient(ellipse at 5% 50%, #65a95e 0 17%, transparent 13%),
+	radial-gradient(ellipse at 100% 60%, #65a95e 0 20%, transparent 13%),
+        radial-gradient(ellipse at 60% 65%, #63a65b 0 15%, transparent 16%),
+        radial-gradient(circle at 30% 25%, #9de7ff, #287bc5 55%, #102a65);
+}
+
+.mars {
+    background: radial-gradient(circle at 30% 25%, #ffb27f, #c75b3b 55%, #6e2925);
+}
+
+.jupiter {
+    background: repeating-linear-gradient(
+        0deg,
+        #c8a47d 0 12px,
+        #ead0a9 12px 23px,
+        #a86e4b 23px 32px,
+        #e4c6a0 32px 42px
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.jupiter::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 18px;
+    top: 62px;
+    right: 22px;
+    border-radius: 50%;
+    background: #a65340;
+}
+
+.saturn {
+    background: radial-gradient(circle at 39% 25%, #f9e1a5, #d4b15a 25%, #8b2020);
+    position: relative;
+    z-index: 1;
+}
+
+/* Pouze přední část prstence */
+.saturn::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 48px;
+    top: 30px;
+    left: -13px;
+    border: 12px solid #d3b20a;
+    border-radius: 50%;
+    transform: rotate(-18deg);
+    clip-path: inset(50% 0 0 0);
+    z-index: 2;
+}.uranus {
+    background: radial-gradient(circle at 30% 25%, #c6ffff, #70d0db 55%, #337e9c);
+}
+
+.neptune {
+    background: radial-gradient(circle at 30% 25%, #77aaff, #2855d1 55%, #101a66);
+}
+
+.planet-card h2 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.planet-card > p {
+    font-size: 20px;
+}
+
+.planet-fact {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 20px !important;
+}
+
+/* CASOVA OSA VESMIRNYCH MISI */
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 2px solid var(--border);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 38px 10px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: -37px;
+    top: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 15px rgba(105, 201, 255, 0.4);
+}
+
+.timeline-year {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.timeline-content {
+    padding: 24px;
+    background: var(--surface);
+    border: 10px solid var(--border);
+    border-radius: 10px;
+}
+
+.timeline-content h3 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.timeline-content p {
+    font-size: 20px;
+}
+
+/* PATICKA */
+
+.footer {
+    padding: 35px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 10px solid var(--border);
+}
+
+/* Lukáš Zvěřina*/
+.footer p {
+    font-size: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .header {
+        padding: 18px 5%;
+        gap: 15px;
+    }
+
+    .navigation {
+        gap: 12px 18px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 65px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .card-grid,
+    .planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planet-card {
+        padding: 28px;
+    }
+
+    .fact-banner {
+        margin: 0 6% 50px;
+        padding: 30px 20px;
+    }
+
+    .page-hero {
+        padding: 55px 6% 40px;
+    }
+
+    .timeline {
+        padding-left: 22px;
+    }
+
+    .timeline-item::before {
+        left: -29px;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* MOBILNI TELEFONY A TABLETY */
+
+@media (max-width: 1000px) {
+    .planet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header {
+        justify-content: center;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
+}
+
+
+/* STRANKA GALAXIE */
+
+.galaxy-hero {
+    background:
+        linear-gradient(
+            rgba(8, 14, 27, 0.65),
+            rgba(8, 14, 27, 0.95)
+        ),
+        url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.galaxy-hero h1 {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.galaxy-hero > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.galaxy-grid .card img {
+    height: 230px;
+}
+
+.galaxy-grid .card-content {
+    min-height: 200px;
+}
+
+.galaxy-grid .card h3 {
+    color: var(--text);
+}
+
+.galaxy-grid .card:hover {
+    box-shadow: 0 12px 35px rgba(55, 105, 190, 0.12);
+}
+
+.galaxy-fact {
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(75, 89, 180, 0.25),
+            transparent 65%
+        ),
+        var(--surface);
+}
+
+@media (max-width: 600px) {
+    .galaxy-hero {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .galaxy-grid .card img {
+        height: 210px;
+    }
+
+    .galaxy-grid .card-content {
+        min-height: auto;
+    }
+}
